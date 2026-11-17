@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy National Princess Day, Kanak 👑🌻</title>
+  <!-- Google Fonts for Dreamy Princess Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Magical Preloader -->
+  <div id="preloader" class="preloader">
+    <div class="loader-crown">👑</div>
+    <p class="loader-text">Preparing a royal world for Kanak...</p>
+  </div>
+
+  <!-- Ambient Canvas for Stars, Floating Hearts, Petals & Sparkle Cursor -->
+  <canvas id="magicCanvas"></canvas>
+
+  <!-- Floating Butterflies Container -->
+  <div class="butterflies-layer" aria-hidden="true">
+    <div class="butterfly b1">🦋</div>
+    <div class="butterfly b2">🦋</div>
+    <div class="butterfly b3">🦋</div>
+  </div>
+
+  <!-- Floating Royal Music Player -->
+  <div class="music-widget glass-card" id="musicWidget">
+    <button id="musicToggleBtn" class="music-btn" aria-label="Play or Pause Music" title="Play / Pause">
+      <span id="musicIcon">▶️</span>
+    </button>
+    <div class="music-info">
+      <span class="music-title">Princess Waltz</span>
+      <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.5" aria-label="Volume Control" />
+    </div>
+    <button id="muteBtn" class="music-btn small" aria-label="Mute or Unmute" title="Mute / Unmute">
+      <span id="muteIcon">🔊</span>
+    </button>
+    <!-- Replaceable local audio file -->
+    <audio id="bgMusic" src="Yes, yes i love you it’s so easy to say to do reverb slowed carrozzeria music.mp3" loop preload="auto"></audio>
+  </div>
+
+  <!-- 1. GRAND WELCOME SCREEN -->
+  <header id="welcome-screen" class="welcome-screen">
+    <div class="welcome-content glass-card reveal-up">
+      <div class="crown-stage">
+        <div class="crown-aura"></div>
+        <svg class="royal-crown-svg" viewBox="0 0 160 110" width="120" height="85">
+          <defs>
+            <linearGradient id="champagneGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFF5D6" />
+              <stop offset="45%" stop-color="#E6B85C" />
+              <stop offset="100%" stop-color="#B8862D" />
+            </linearGradient>
+          </defs>
+          <path d="M18,88 L12,35 L48,62 L80,20 L112,62 L148,35 L142,88 Z" fill="url(#champagneGold)" stroke="#FFFDF9" stroke-width="2.5" stroke-linejoin="round" />
+          <rect x="18" y="88" width="124" height="14" rx="6" fill="url(#champagneGold)" stroke="#FFFDF9" stroke-width="2" />
+          <circle cx="80" cy="16" r="6" fill="#FF85A1" />
+          <circle cx="12" cy="31" r="5" fill="#C77DFF" />
+          <circle cx="148" cy="31" r="5" fill="#C77DFF" />
+          <circle cx="80" cy="70" r="7" fill="#FF4D79" />
+          <circle cx="48" cy="74" r="5" fill="#FFF5D6" />
+          <circle cx="112" cy="74" r="5" fill="#FFF5D6" />
+        </svg>
+        <div class="crown-nameplate">Princess Kanak</div>
+      </div>
+
+      <p class="date-badge">November 18 • National Princess Day</p>
+      <h1 class="main-title">Happy National Princess Day, Kanak! 👑</h1>
+      <p class="subtitle">Today, the whole universe celebrates someone as special as you.</p>
+
+      <button id="enterWorldBtn" class="royal-btn primary-btn">
+        <span>Enter My Little World</span>
+        <span class="btn-sparkle">✨</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN EXPERIENCE (Unlocked smoothly upon clicking Enter) -->
+  <main id="mainExperience" class="main-experience">
+    
+    <!-- 2. SPECIAL SUNFLOWER BOUQUET SECTION -->
+    <section id="sunflower-section" class="section-block">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-kicker">Your Favourite Bloom</span>
+          <h2>A Garden of Golden Sunflowers 🌻</h2>
+        </div>
+
+        <div class="bouquet-showcase glass-card reveal-on-scroll">
+          <div class="bouquet-glow"></div>
+          
+          <!-- Detailed SVG Animated Sunflower Bouquet -->
+          <div id="bouquetWrapper" class="bouquet-wrapper">
+            <svg id="sunflowerBouquetSvg" class="bouquet-svg" viewBox="0 0 420 440" width="360" height="380">
+              <defs>
+                <radialGradient id="sunCenter" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#3D1E0D" />
+                  <stop offset="70%" stop-color="#5C2E14" />
+                  <stop offset="100%" stop-color="#291206" />
+                </radialGradient>
+                <linearGradient id="petalGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFE169" />
+                  <stop offset="60%" stop-color="#F7B500" />
+                  <stop offset="100%" stop-color="#D98200" />
+                </linearGradient>
+                <linearGradient id="wrapPaper" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFE5EC" />
+                  <stop offset="100%" stop-color="#E2C2FF" />
+                </linearGradient>
+                <linearGradient id="silkRibbon" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#FF7597" />
+                  <stop offset="50%" stop-color="#FFB3C6" />
+                  <stop offset="100%" stop-color="#FF7597" />
+                </linearGradient>
+              </defs>
+
+              <!-- Stems & Leaves -->
+              <g class="bouquet-stems">
+                <path d="M210,180 Q190,290 210,410" stroke="#4F772D" stroke-width="8" fill="none" stroke-linecap="round"/>
+                <path d="M135,195 Q175,300 205,410" stroke="#31572C" stroke-width="7" fill="none" stroke-linecap="round"/>
+                <path d="M285,195 Q245,300 215,410" stroke="#31572C" stroke-width="7" fill="none" stroke-linecap="round"/>
+                <path d="M155,130 Q185,260 208,410" stroke="#4F772D" stroke-width="7" fill="none" stroke-linecap="round"/>
+                <path d="M265,130 Q235,260 212,410" stroke="#4F772D" stroke-width="7" fill="none" stroke-linecap="round"/>
+                <ellipse cx="145" cy="255" rx="28" ry="14" transform="rotate(-30 145 255)" fill="#6A994E"/>
+                <ellipse cx="275" cy="255" rx="28" ry="14" transform="rotate(30 275 255)" fill="#6A994E"/>
+              </g>
+
+              <!-- Bouquet Wrapping Cone -->
+              <polygon points="105,230 315,230 230,415 190,415" fill="url(#wrapPaper)" opacity="0.92" stroke="#FFFDF9" stroke-width="2"/>
+              <polygon points="130,230 290,230 222,415 198,415" fill="#FFF5F8" opacity="0.6"/>
+
+              <!-- Sunflowers Group (Populated with crisp petals via JS for rich detail) -->
+              <g id="sunflowersContainer"></g>
+
+              <!-- Silk Ribbon & Bow -->
+              <g class="bouquet-ribbon">
+                <rect x="186" y="315" width="48" height="16" rx="6" fill="url(#silkRibbon)" />
+                <path d="M210,323 C170,295 155,335 195,330 Z" fill="url(#silkRibbon)" />
+                <path d="M210,323 C250,295 265,335 225,330 Z" fill="url(#silkRibbon)" />
+                <path d="M202,330 L182,385 L196,380 L208,332 Z" fill="#FF7597" />
+                <path d="M218,330 L238,385 L224,380 L212,332 Z" fill="#FF7597" />
+                <circle cx="210" cy="323" r="8" fill="#FFD166" stroke="#FFF" stroke-width="2"/>
+              </g>
+            </svg>
+          </div>
+
+          <blockquote class="bouquet-quote">
+            “Because you deserve a thousand sunflowers, and even they could never match the brightness you bring into my world.”
+          </blockquote>
+
+          <button id="bloomBouquetBtn" class="royal-btn gold-btn">
+            <span>A Bouquet Just for You 🌻</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. HEARTFELT ROYAL LETTER SECTION -->
+    <section id="letter-section" class="section-block">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-kicker">Sealed With Warmth</span>
+          <h2>A Letter Written for Your Heart 💌</h2>
+          <p class="section-sub">Tap the royal wax seal to open your letter</p>
+        </div>
+
+        <div class="envelope-stage reveal-on-scroll">
+          <div id="envelopeBox" class="envelope-wrapper" role="button" tabindex="0" aria-label="Open Heartfelt Letter">
+            <div class="envelope-flap"></div>
+            <div class="envelope-body">
+              <div class="wax-seal">
+                <span>K</span>
+              </div>
+              <p class="envelope-label">For Princess Kanak</p>
+            </div>
+          </div>
+
+          <!-- Expanded Letter Paper -->
+          <article id="letterPaper" class="letter-paper glass-card hidden" aria-live="polite">
+            <div class="letter-header">
+              <span class="letter-ornament">👑 🌻 👑</span>
+              <button id="replayLetterBtn" class="text-link-btn" title="Replay Letter Reveal">↻ Replay Reveal</button>
+            </div>
+            <div id="letterContent" class="letter-body"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. INTERACTIVE LOVE COUNTER & SURPRISE GENERATOR -->
+    <section id="reasons-section" class="section-block">
+      <div class="container two-col-grid">
+        <!-- Love Counter Card -->
+        <div class="glass-card feature-card reveal-on-scroll">
+          <span class="card-icon">💖</span>
+          <h3>Reasons You're Special</h3>
+          <div class="counter-display">
+            <span id="reasonCounter">0</span>
+            <span class="infinity-badge" id="infinityBadge">+ ∞</span>
+          </div>
+          <p class="card-desc">Every heartbeat, every smile, and every quiet moment adds another reason why you are unforgettable.</p>
+          <button id="addReasonBtn" class="royal-btn soft-btn">Count Another Reason ✨</button>
+        </div>
+
+        <!-- Sweet Surprise Generator Card -->
+        <div class="glass-card feature-card reveal-on-scroll">
+          <span class="card-icon">🪄</span>
+          <h3>Royal Pocket of Compliments</h3>
+          <div id="sweetMessageBox" class="sweet-message-box">
+            “Tap below whenever you need a reminder of how magical you truly are.”
+          </div>
+          <button id="surpriseMsgBtn" class="royal-btn primary-btn">Reveal a Sweet Note 💌</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. MEMORY GALLERY -->
+    <section id="gallery-section" class="section-block">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-kicker">Cherished Moments</span>
+          <h2>Gallery of Golden Memories ✨</h2>
+          <p class="section-sub">Little snapshots of grace, laughter, and sunshine</p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Replace the gradient frames with <img> tags pointing to your personal photos -->
+          <div class="memory-card glass-card reveal-on-scroll">
+            <div class="memory-photo photo-1">
+              <span class="photo-placeholder-icon">🌻</span>
+            </div>
+            <div class="memory-caption">
+              <h4>Your Radiant Smile</h4>
+              <p>The kind of warmth that turns ordinary days into golden memories.</p>
+            </div>
+          </div>
+
+          <div class="memory-card glass-card reveal-on-scroll">
+            <div class="memory-photo photo-2">
+              <span class="photo-placeholder-icon">👑</span>
+            </div>
+            <div class="memory-caption">
+              <h4>Effortless Grace</h4>
+              <p>Carrying kindness, strength, and beauty everywhere you walk.</p>
+            </div>
+          </div>
+
+          <div class="memory-card glass-card reveal-on-scroll">
+            <div class="memory-photo photo-3">
+              <span class="photo-placeholder-icon">✨</span>
+            </div>
+            <div class="memory-caption">
+              <h4>Pure Magic</h4>
+              <p>Making the world feel softer, brighter, and infinitely happier.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. WISHES FOR KANAK & DIGITAL GIFT BOX -->
+    <section id="wishes-gift-section" class="section-block">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-kicker">Blessings & Dreams</span>
+          <h2>Wishes for Your Happiness 🌟</h2>
+        </div>
+
+        <div class="wishes-grid reveal-on-scroll">
+          <div class="wish-pill glass-card">
+            <span>🌅</span>
+            <p>Countless golden mornings filled with peace and laughter.</p>
+          </div>
+          <div class="wish-pill glass-card">
+            <span>🌻</span>
+            <p>Dreams that bloom effortlessly like sunflowers toward the sun.</p>
+          </div>
+          <div class="wish-pill glass-card">
+            <span>💫</span>
+            <p>A life surrounded by genuine love, respect, and gentle magic.</p>
+          </div>
+        </div>
+
+        <!-- Interactive Digital Gift Box -->
+        <div class="gift-stage glass-card reveal-on-scroll">
+          <h3>A Special Royal Gift Box for You 🎁</h3>
+          <p class="section-sub">Click the gift box to unwrap your surprise</p>
+
+          <div id="giftBox" class="gift-box" role="button" tabindex="0" aria-label="Open Royal Gift Box">
+            <div class="gift-lid">
+              <div class="gift-bow"></div>
+            </div>
+            <div class="gift-base">
+              <div class="gift-ribbon-v"></div>
+            </div>
+          </div>
+
+          <div id="giftRevealCard" class="gift-reveal hidden">
+            <div class="royal-certificate">
+              <p class="cert-top">OFFICIAL ROYAL DECREE</p>
+              <h4>Crown of Eternal Sunshine 👑</h4>
+              <p>
+                This certifies that <strong>Kanak</strong> holds the permanent title of
+                <em>Most Precious Princess</em>—deserving of endless sunflowers, unconditional kindness, and every dream her heart desires.
+              </p>
+              <span class="cert-sign">Valid Today, Tomorrow & Forever ❤️</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FINAL FULL-SCREEN SURPRISE -->
+    <section id="final-surprise" class="final-surprise-screen">
+      <div class="final-content glass-card reveal-on-scroll">
+        <div class="final-crown">👑</div>
+        <h2 class="final-headline">
+          To the girl who deserves a universe full of happiness...<br />
+          <span>Happy National Princess Day, Kanak! 👑🌻</span>
+        </h2>
+        <p class="final-subtext">
+          May your smile always shine brighter than the sun, and may your life always bloom like a field of sunflowers.
+        </p>
+
+        <div class="final-bouquet-emblem" aria-hidden="true">
+          <span>🌻</span><span>🌻</span><span>🌻</span>
+        </div>
+
+        <button id="celebrateFinaleBtn" class="royal-btn gold-btn">
+          <span>Shower with Sunflowers & Hearts ✨</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
